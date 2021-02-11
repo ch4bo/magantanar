@@ -1,31 +1,24 @@
 
 <?php
 require_once 'config.php';
-$lista="";
-$sql="SELECT nev from tanar";
-$stmt=$db->query($sql);
 
-while($row=$stmt->fetch())
-$lista.="<li>{$row['nev']}"."</li>";
+$sql="SELECT nev,telefon,email,tantargynev from tanar inner join tantargy on tanar.tantargy_id=tantargy.tantargy_id";
+$stmt=$db->query($sql);
+$lista="";
+
+while($row=$stmt->fetch()){
+extract($row);
+$lista.="<li>{$nev} - {$telefon} - {$email} - {$tantargynev}</li>";}
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-<div class="p-5">
-<h2>A tanárok:</h2>
-<ul>
-<li><?$lista?></li>
-</ul>
 
-</div>
 
-</body>
-</html>
+
+<ol>
+ <?=$lista?>
+
+</ol>
+
+
+
 

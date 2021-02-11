@@ -1,5 +1,9 @@
 
+<?php
+require_once "config.php";
 
+
+?>
 
 <!DOCTYPE html>
 <html lang="hu">
@@ -29,10 +33,10 @@
 				<a class="nav-link" href="index.php">Főoldal</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="index.php?-tanar.php">Tanárok</a>
+				<a class="nav-link" href="index.php?p=tanar.php">Tanárok</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="index.php?-diak.php">Diákok</a>
+				<a class="nav-link" href="index.php?p=diak.php">Diákok</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link " href="index.php?-tanitvany.php">Tanár-tanítvány</a>
@@ -45,8 +49,10 @@
 
     <div class="tartalom">
 		<?php
-			
-
+			if(isset($_GET["p"])){
+				include $_GET['p'];
+			}
+else include("fooldal.php");
 		?>
 	</div>	
            
