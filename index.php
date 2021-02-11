@@ -38,9 +38,7 @@ require_once "config.php";
 			<li class="nav-item">
 				<a class="nav-link" href="index.php?p=diak.php">Diákok</a>
 			</li>
-			<li class="nav-item">
-				<a class="nav-link " href="index.php?-tanitvany.php">Tanár-tanítvány</a>
-			</li>
+			
 		</ul>
   </div>
 
